@@ -1,0 +1,125 @@
+<html ng-app="locationsApp">
+<head>
+	<meta charset="utf-8">
+	<title>Explore The World</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js" charset="utf-8"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+                crossorigin="anonymous">
+  </script> <!-- test -->
+	<script src="/js/app.js" charset="utf-8"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!-- test -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script><!--  test -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> <!-- test -->
+	<link rel="stylesheet" href="css/app.css">
+	<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+
+</head>
+<body ng-controller="MyController as ctrl">
+	<!-- testing modal -->
+	<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color: rgb(30,34,39)">
+        <div class="modal-header" style="padding:35px 50px;">
+          <h4 style="color: white"><span class="glyphicon glyphicon-lock"></span> Login</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form" ng-submit="ctrl.logIn()">
+            <div class="form-group">
+              <label for="usrname" style="color: white"><span class="glyphicon glyphicon-user"></span> Username</label>
+              <input class="form-control" type="text" ng-model="ctrl.username" placeholder="Username" /><br/>
+            </div>
+            <div class="form-group">
+              <label for="psw" style="color: white"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+              <input class="form-control" type="password" ng-model="ctrl.password" placeholder="Password" /><br/>
+            </div>
+             <button class="btn btn-primary btn-block" id="loginbutton"  type="submit"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;Login</button>
+          </form>
+        </div>
+         <div class="modal-footer">
+          	<button class="btn btn-danger btn-default" data-dismiss="modal" type="button" ng-click="ctrl.changeInclude('display')" name="button"><span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Return</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>  <!-- bottom login modal -->
+
+<div class="modal fade" id="Modal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color: rgb(30,34,39)">
+        <div class="modal-header" style="padding:35px 50px;">
+          <h4 style="color: white"><span class="glyphicon glyphicon-lock"></span> Sign Up</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form" ng-submit="ctrl.createUser()">
+            <div class="form-group">
+              <label for="usrname" style="color: white"><span class="glyphicon glyphicon-user"></span> Username</label>
+              <input class="form-control" type="text" ng-model="ctrl.username" placeholder="Username" /><br/>
+            </div>
+            <div class="form-group">
+              <label for="psw" style="color: white"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+              <input class="form-control" type="password" ng-model="ctrl.password" placeholder="Password" /><br/>
+            </div>
+             <button class="btn btn-primary btn-block" id="userbutton" type="submit"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;Sign Up</button>
+          </form>
+        </div>
+         <div class="modal-footer">
+          	<button class="btn btn-danger btn-default" data-dismiss="modal" type="button" ng-click="ctrl.changeInclude('display')" name="button"><span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Return</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>  <!-- bottom sign up modal -->
+
+
+
+
+
+
+
+	<nav id="navcontainer" class="" ng-if='ctrl.loggedInUsername !== null'>
+		<h2 id="locationsheader">World Explorer</h2>
+		<button ng-if='ctrl.includePath === "partials/display.html" || ctrl.includePath ==="partials/show.html"' type="button" ng-click="ctrl.changeInclude('new')" class="btn btn-light">+ Add Location</button>
+		<div class="navUserInfo" ng-if="ctrl.loggedInUsername">
+			<p > Welcome, {{ctrl.loggedInUsername}}!</p>
+			<p><span ng-include="'partials/logoutbutton.html'"></span></p>
+		</div>
+	</nav>
+
+	<div ng-if='ctrl.loggedInUsername === null' class="banner">
+		<div class="container-h1">
+			<h1>World Explorer</h1>
+		</div>
+		<div class="container-button">
+			<button type="button" class="btn btn-primary btn-lg" id="myBtn" data-toggle="modal" data-target="#Modal">Sign Up</button>
+			<button type="button" class="btn btn-primary btn-lg" id="myBtn" data-toggle="modal" data-target="#myModal">Log In</button>
+		</div>
+	<video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="https://media.giphy.com/media/39hmVtQ6THxgPU7Uh9/giphy.mp4">
+    </video>
+    </div>
+
+	<div class="container">
+
+
+		<!-- <div ng-include="'partials/new.html'"></div>
+		<div ng-include="'partials/edit.html'"></div>
+		<div ng-include="'partials/show.html'"></div> -->
+		<div ng-include="ctrl.includePath"></div>
+
+		<div class="">
+		</div>
+
+	</div>
+	<footer ng-include="'partials/footer.html'">
+
+	</footer>
+</body>
+</html>

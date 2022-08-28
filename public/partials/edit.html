@@ -1,0 +1,19 @@
+<div class="editFormContainer">
+    <form ng-submit="ctrl.editLocation(ctrl.oneLocation._id)">
+        <div class="form-group">
+        <label for="editLocationName">Edit Location Name</label>
+            <input id="editLocationName" ng-model="ctrl.oneLocation.name"class="form-control" type="text" >
+        </div>
+        <div class="form-group">
+            <label for="editLocationImage">Edit Image</label>
+            <input id="editLocationImage" ng-model="ctrl.oneLocation.image" class="form-control" type="url" >
+        </div>
+        <div class="form-group">
+            <label for="editLocationDescription">Update your Description</label>
+            <textarea id="editLocationDescription" ng-model="ctrl.oneLocation.description" class="form-control" rows="8" cols="80" ></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit" >Make Update</button>
+        <button class="btn btn-primary" type="button" ng-click="ctrl.deleteLocation(ctrl.oneLocation._id)">Remove Location</button>
+        <button class="btn btn-primary" type="button" ng-click="ctrl.changeInclude('show')">Back</button>
+    </form>
+</div>

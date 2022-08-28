@@ -1,0 +1,29 @@
+    <div class="displayWrapper">
+
+      <div class="organizesort">
+        <div class="sortLoggedIn d-flex flex-column mx-5 align-items-center" >
+            <label class='organizeLabel'>Sort By:</label>
+            <select  ng-model='ctrl.sort' ng-options='option.label for option in ctrl.sortLoggedIn' id="sortbutton">
+            </select>
+        </div>
+        <div class="search d-flex flex-column mx-5 align-items-center">
+            <label class='organizeLabel'>Search:</label>
+            <input type="text" ng-model="search" placeholder="Search" class="search">
+        </div>
+      </div>
+
+
+        <div class="displayContainer">
+            <div ng-repeat ="location in ctrl.location | orderBy:ctrl.sort.value | filter: (ctrl.sort.filter === 'user'? {'user1': ctrl.loggedInUsername}: (ctrl.sort.filter === 'favorites'? {'likedAndLoved': {'username': ctrl.loggedInUsername, 'loved': true} }:'')) | filter: search" ng-click="ctrl.changeInclude('show');ctrl.showOne(location._id)" class="displayItem" >
+
+                <img  class="displayImg" ng-src="{{location.image}}" alt="">
+
+                <div class="displayLikesAndFavorite">
+                    <p class='likeLove' ng-click='$event.stopPropagation(); ctrl.likeAndLove(location, "like")'><img ng-src="{{ctrl.getLikeValue(location)? '../css/imgs/liked.png' : '../css/imgs/thumbsUp.png'}}" alt="Likes">  {{location.likes}}</p>
+                    <h4>{{location.name}}</h4>
+                    <p ng-click='$event.stopPropagation(); ctrl.likeAndLove(location, "love")' class='likeLove'><img ng-src="{{ctrl.getLoveValue(location)? '../css/imgs/loved.png' : '../css/imgs/favorite.png'}}" alt="favorite"></p>
+
+                </div>
+            </div>
+        </div>
+</div>

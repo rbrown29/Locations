@@ -1,0 +1,22 @@
+
+        <div class="inputFormContainer">
+            <form ng-submit="ctrl.createLocation()">
+                <div class="form-group">
+                    <label class="label1" for="newLocationName">New Location Name</label>
+                    <input id="newLocationName" class="form-control" type="text" placeholder="ex. Sydney, Australia" ng-model="ctrl.name">
+                </div>
+                <div class="form-group">
+                    <label class="label1" for="newLocationImage">Add an Image</label>
+                    <input id="newLocationImage" class="form-control" type="text" placeholder="Image url" ng-model="ctrl.image">
+                </div>
+                <div class="form-group">
+                    <label class="label1" for="newLocationDescription">Give us some details about this location!</label>
+
+                    <!-- Thor, It seems like textarea doesn't work with ng-model. I'm used text area for now. I did research and others have this same issue, ng-model working fine for input text boxes -->
+                    <textarea ng-model="ctrl.description" id="newLocationDescription" class="form-control" rows="8" cols="80" placeholder="Why do you love this location?"></textarea>
+                </div>
+                    <button class="btn btn-primary" type="submit">Add Location</button>
+                    <button class="btn btn-primary" type="button" ng-click='ctrl.changeInclude("display")'>Back</button>
+            </form>
+
+        </div>

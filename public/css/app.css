@@ -1,0 +1,367 @@
+body{
+  font-family: sans-serif;
+  /* background-image: url('imgs/backgroundTravel.png'); */
+  background-image: url('imgs/spacepaper.jpg');
+  /* background-color: gray; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(223,213,174,.7);
+}
+
+.container{
+    margin-top: 30px;
+}
+
+select{
+    width: 120px;
+    height:27px;
+}
+
+/*====================
+=== nav bar
+======================*/
+nav{
+    /* background-color: #253529; */
+    background-color: rgba(0, 0, 0, 0.5);
+    min-height: 120px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 0 40px;
+    /* background-color: black; */
+}
+
+.navUserInfo{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    border: 1px solid rgba(50, 50, 50, 0.5);
+    padding: 10px;
+    height: 75px;
+    border-radius: 8px;
+    background-color: white;
+}
+
+#navcontainer  h2{
+    font-family: 'Righteous', cursive;
+    font-size: 40px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/*====================
+===video for banner
+======================*/
+video {
+  position: absolute;
+  right:0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+/*====================
+===Banner Styling
+======================*/
+.banner {
+    position: relative;
+    height: 80%;
+    width: 100%;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    padding: 50px;
+    border: 10px solid rgb(30,34,39);
+}
+
+/*================================
+===Div style for banner buttons
+==================================*/
+.container-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+
+/*==========================
+===container button margin
+============================*/
+.container-button button {
+    margin: 2%;
+}
+
+/*=======================
+===Banner H1
+=========================*/
+.container-h1 {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    font-size: 12px;
+    font-family: 'Righteous', cursive;
+    margin: 10px 0 20px; text-transform: uppercase; text-shadow: 2px 2px 0 #000, margin: 10px 0 24px;
+}
+
+/*================
+===h2 style
+==================*/
+h2 {
+    color: #6F8C5F;
+    text-shadow: 2px 2px black;
+}
+/*====================
+===New location style
+======================*/
+.label1 {
+    color: #6F8C5F;
+    text-shadow: 1px 1px black;
+}
+
+/*=========================
+===Login/signup input style
+===========================*/
+.input1 {
+    margin:1%;
+}
+
+
+
+/* ==============
+=== Display items styling
+================= */
+.displayWrapper{
+    display:flex;
+    flex-direction:column;
+    background-color: rgba(171,116,167,.5);
+    border-radius: 10px;
+    padding: 40px;
+    margin: 30px 10px 30px 10px;
+}
+
+.displayContainer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+}
+
+.displayItem {
+    position:relative;
+    width:240px;
+    height: 130px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px rgb(171,116,167);
+    margin:15px;
+    background-color: white;
+}
+
+.displayImg{
+    opacity:1;
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+
+    transition: .5s ease;
+}
+
+.displayItem:hover .displayImg{
+    opacity: 0.3;
+}
+
+.displayItem h3{
+    margin:0;
+}
+
+.displayLikesAndFavorite{
+    background-color: rgba(255,240,245,.7);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: .5s ease;
+    z-index: 1;
+}
+
+.displayItem:hover .displayLikesAndFavorite{
+    background-color: rgba(255,240,245,0);
+}
+
+.displayLikesAndFavorite img{
+    height: 25px;
+    z-index: 2;
+}
+
+.displayLikesAndFavorite p{
+    margin:10px;
+}
+
+.form-group input{
+    overflow-wrap: break-word;
+}
+/* ==============
+=== New Item Form Styling
+================= */
+.inputFormContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 30px;
+    background-image: url('imgs/footpath.png');
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-position: right;
+    max-width: 800px;
+    background-color: rgb(224,255,251);
+    padding:30px 0;
+    border-radius: 10px;
+}
+
+
+
+.inputFormContainer input, .inputFormContainer textarea{
+    width:70%;
+    background-color: rgba(192,192,192,.5)
+}
+
+/* ==============
+=== Edit Item Form Styling
+================= */
+.editFormContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 30px;
+    background-image: url('imgs/compass.png');
+    background-repeat:no-repeat;
+    background-position:right bottom;
+    background-size: auto;
+    background-color: rgb(224,255,251);
+    padding:30px 0;
+    border-radius: 10px;
+}
+
+.editFormContainer input, .editFormContainer textarea{
+    width:70%;
+    background-color: rgba(192,192,192,.5)
+}
+
+/* ==============
+=== Show one item styling
+================= */
+.showContainer{
+    background-color: rgba(171,116,167,.5);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    /* padding: 100px; */
+    margin: 20px;
+
+}
+
+.locationImg{
+    max-width:70%;
+    height:300px;
+    border-radius: 10px;
+}
+.showDescription{
+    background-color: #E0FFFB;
+    margin: 10px 0;
+    border-radius: 10px;
+    padding:15px;
+    width:90%;
+}
+
+/* ==============
+=== footer styling
+================= */
+
+footer{
+  /* background-color: #6F8C5F; */
+  /* background-color: #253529; */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* border-radius: 1; */
+  margin-top: 50px;
+  color: white;
+}
+
+.hover{
+
+}
+
+.footerIcons{
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+  margin: 10px;
+  text-align: center;
+}
+
+.logo{
+  width: 40px;
+  height: 40px;
+  /* padding: 15px; */
+  margin: 0px 45px 0px 45px;
+}
+
+.hover:hover{
+    cursor: pointer;
+}
+
+.footerTwo {
+  padding: 5px 0px 0px 0px;
+}
+
+.copyright{
+  text-align: center;
+  font-size: 10px;
+}
+//////////////////////////////////////////
+.modal-header, h4, .close {
+    background-color: #5cb85c;
+    color:white !important;
+    text-align: center;
+    font-size: 30px;
+  }
+///////////////////////////////////////////
+
+/* sort/filter styling */
+
+#sortbutton{
+  width: 150px;
+  height: 25px;
+}
+
+.organizeLabel{
+    font-size: 20px;
+    color:white;
+    letter-spacing: 2px;
+}
+
+.organizesort{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* justify-content: center; */
+}
+
+/* final styling */
+#testarea{
+  width: 500px;
+  padding: 30px;
+  /* margin: 20px; */
+}
+
+
+

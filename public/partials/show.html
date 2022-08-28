@@ -1,0 +1,38 @@
+<div class="showContainer">
+
+    <h1 class="display-1" style="font-family: 'Righteous', cursive;
+    margin: 10px 0 20px; text-transform: uppercase; text-shadow: 2px 2px 0 #000; margin: 10px 0 24px">{{ctrl.oneLocation.name}}</h1>
+    <img class='locationImg' ng-src="{{ctrl.oneLocation.image}}" alt="">
+    <div class="showDescription">
+        <p>{{ctrl.oneLocation.description}}<br><br>
+        Submitted By: {{ctrl.oneLocation.user1}}<br>
+        Created: {{ctrl.oneLocation.createdAt | date:'MMM d, y'}} at {{ctrl.oneLocation.createdAt | date:'shortTime'}}
+        </p>
+
+        <!-- <div class="showDescription" ng-if='comment.name === ctrl.oneLocation.name' ng-repeat="comment in ctrl.comment">
+          <p>{{comment.comment}} + {{comment.user1}}</p>
+          </div> -->
+    </div>
+   <!--  new.................................................................... -->
+   <div class="showDescription" ng-if='comment.name === ctrl.oneLocation.name' ng-repeat="comment in ctrl.comment">
+     <p>{{comment.comment}}<br><br>
+        Submitted By: {{comment.user1}}<br>
+        Created: {{comment.createdAt | date: 'MMM d, y'}} at {{comment.createdAt | date:'shortTime'}}
+     </p>
+     </div>
+
+    <div class="showDescription" ng-if='ctrl.loggedInUsername !== null'> <!-- //new -->
+    <form ng-submit="ctrl.createComments()">
+        <textarea id="testarea" style="background-color: #E0FFFB;border:none;"cols="135" rows="4" id="inputlg" type="text" placeholder="Comment here..." ng-model="ctrl.newComment"></textarea>
+         <button class="btn btn-primary btn-lg m-3" type="submit" >Comment</button>
+    </form>
+
+    </div>
+    </div>
+    <!-- ............................................................................ -->
+    <div class="showButtons d-flex flex-row justify-content-center">
+        <button class="btn btn-primary btn-lg m-3" type="button" ng-click='ctrl.changeInclude("display");ctrl.toTop()'>Back</button>
+        <button ng-if="ctrl.loggedInUsername === ctrl.oneLocation.user1" class="btn btn-primary btn-lg m-3" type="button" ng-click='ctrl.changeInclude("edit")'>Edit</button>
+    </div>
+
+</div>
