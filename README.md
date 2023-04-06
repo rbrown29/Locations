@@ -2,7 +2,7 @@
 
 ### Authors: Thor Kuivanen, Richard Brown, and Troy Hancock
 
-<a href="https://sheltered-shelf-35397.herokuapp.com/">Heroku Depolyment site</a><br>
+<a href="https://locations-29of.onrender.com/">Render Depolyment site</a><br>
 <a href="https://github.com/yortortle/FavoriteLocationsApp">GitHub Project</a>
 
 <p>
