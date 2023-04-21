@@ -1,4 +1,5 @@
-# Unit3Project
+
+![travel](https://user-images.githubusercontent.com/53094729/233706877-9c877073-462f-4e53-8e8c-764e21f8db88.gif)
 
 ### Authors: Thor Kuivanen, Richard Brown, and Troy Hancock
 
